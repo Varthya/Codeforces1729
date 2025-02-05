@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+  int t;
+  cin>>t;
+  while(t--)
+  {
+      long long int n,a,b,c;
+        cin>>n>>a>>b>>c;
+     long long int three_daysdist=a+b+c;
+     long long int ans=n/three_daysdist;
+     long long int rem_dist=n%three_daysdist;
+       ans=ans*3;
+        if(rem_dist!=0)
+        {
+            if(a>=rem_dist)
+            {
+                ans=ans+1;
+            }
+            else if(a+b>=rem_dist)
+            {
+                ans=ans+2;
+            }
+            else  if(a+b+c>=rem_dist)
+            {
+                ans=ans+3;
+            }
+     }
+        cout<<ans<<endl;
+  }
+}
