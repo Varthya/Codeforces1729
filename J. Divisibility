@@ -1,0 +1,10 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    long long int num;
+    cin>>num;
+    long long int lcm=2520;
+    long long int ans=num/lcm;
+    cout<<ans<<endl;
+}
