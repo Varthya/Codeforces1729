@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        long long int l,r,k;
+        cin>>l>>r>>k;
+        long long int low=l;
+        long long int high=r;
+        long long int ans=-1;
+        while(low<=high)
+        {
+            long long int   mid=((low+high)/2);
+            long long int temp=(r/mid);
+            if(temp>=k)
+            {
+                ans=mid;
+                low=mid+1;
+            }
+            else
+            {
+                high=mid-1;
+            }
+        }
+        if(ans==-1)
+            cout<<0<<endl;
+        else
+            cout<<ans-l+1<<endl;
+    }
+}
