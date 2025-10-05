@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        long long int l,r;
+        cin>>l>>r;
+        long long int diff=r-l;
+        long long int n=1;
+        long long int ans=0;
+        while(((n*(n+1))/2)<=diff)
+        {
+            ans=n;
+            n++;
+        }
+        ans++;
+        cout<<ans<<endl;
+    }
+}
