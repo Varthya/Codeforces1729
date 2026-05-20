@@ -1,0 +1,26 @@
+#include<iostream>
+#include<vector>
+#include <algorithm>
+using namespace std;
+int main()
+{
+
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        long long int m,a,b,c;
+        cin>>m>>a>>b>>c;
+        long long int ans=0;
+        ans=min(m,a)+min(m,b);
+        long long int d=0;
+        if(m>a)
+            d=m-a;
+        if(m>b)
+            d+=(m-b);
+
+        ans+=min(c,d);
+    cout<<ans<<endl;
+
+    }
+}
