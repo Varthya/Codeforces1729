@@ -1,0 +1,47 @@
+#include<iostream>
+#include<vector>
+#include <algorithm>
+using namespace std;
+int main()
+{
+
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n;
+        cin>>n;
+        vector<long long int>v1(n,0);
+        vector<long long int>v2(n,0);
+        for(int i=0; i<n; i++)
+        {
+            int x;
+            cin>>x;
+            v1[i]=x;
+        }
+        for(int i=0; i<n; i++)
+        {
+            int x;
+            cin>>x;
+            v2[i]=x;
+        }
+        for(int i=0; i<n; i++)
+        {
+            if(v1[i]>v2[i])
+            {
+                swap(v1[i],v2[i]);
+            }
+        }
+        long long int sum=0;
+        long long int ma=-1;
+        for(int i=0;i<n;i++)
+        {
+           sum+=v2[i];
+           ma=max(ma,v1[i]);
+        }
+       cout<<(ma+sum)<<endl;
+
+    }
+}
+
+
