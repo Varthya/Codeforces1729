@@ -1,0 +1,59 @@
+#include<iostream>
+#include<vector>
+#include <algorithm>
+using namespace std;
+int main()
+{
+
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n;
+        cin>>n;
+        vector<int>arr(n,0);
+        for(int i=0; i<n; i++)
+        {
+            int x;
+            cin>>x;
+            arr[i]=x;
+        }
+        int note=-1;
+        int num=-1;
+        for(int i=0; i<n; i++)
+        {
+            if(arr[i]!=n-i) {
+                note=i;
+                num=n-i;
+                break;
+                
+            }
+            
+        }
+        int note2=-1;
+        if(note!=-1)
+         {
+          for(int i=0;i<n;i++)
+          {
+            if(num==arr[i])
+             {
+             note2=i;
+             }
+         }
+         }
+         int low=note;
+         int high=note2;
+         while(low<high)
+         {
+         swap(arr[low],arr[high]);
+          low++;
+          high--;
+         }
+         for(int i=0;i<n;i++)
+         {
+         cout<<arr[i]<<" ";
+         }
+         cout<<endl;
+    }
+
+}
