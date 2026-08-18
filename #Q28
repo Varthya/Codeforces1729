@@ -1,0 +1,21 @@
+#include<iostream>
+#include<vector>
+#include <algorithm>
+#include<cmath>
+using namespace std;
+int main()
+{
+
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        long long int a,b,c;
+        cin>>a>>b>>c;
+        long long int ans1=abs(a-b);
+        long long int ans2=abs(b-c);
+        long long int ans3=abs(c-a);
+        cout<<min({ans1,ans2,ans3})<<endl;
+    }
+
+}
