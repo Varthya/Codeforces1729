@@ -1,0 +1,27 @@
+class Solution {
+  public:
+    void dfs(vector<vector<int>>&adj, vector<int>&vis,int parent)
+    {
+           if(vis[parent]==true)
+                return;
+          
+            vis[parent]=1;
+           
+        
+        for(auto child:adj[parent])
+        {
+            if(vis[child]==0)
+            {
+                dfs(adj,vis,child);
+            }
+        }
+    }
+    bool checkPath(vector<vector<int>> &adj, int u, int v) {
+        // code here
+        int n=adj.size();
+        vector<int>vis(n,0);
+           dfs(adj,vis,u);
+        
+        return vis[v]==1;
+    }
+};
